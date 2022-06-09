@@ -13,7 +13,7 @@ struct ContentView: View {
     @State private var game=Game()
     var body: some View {
         ZStack{
-//            BackgroundView(game:$game)
+            BackgroundView(game:$game)
         VStack{
             InstractionsView(game:$game)
             SliderText(sliderValue:$sliderValue)
@@ -39,10 +39,11 @@ struct SliderText:View{
     var body: some View{
         HStack{
             SliderLableText(text: "1")
-            Slider(value: $sliderValue,  in: 1.0 ... 100.0)
+            Slider(value: $sliderValue,  in: 1.0 ... 200.0)
             
             SliderLableText(text: "200")
-        }.padding(10)
+        }
+            .padding(.vertical,10)
     }
 }
 struct HiteMeButtonView: View{

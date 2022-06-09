@@ -22,9 +22,20 @@ struct SliderLableText:View{
         Text(text)
             .bold()
             .opacity(0.7)
+            .frame(width: 35.0)
     }
 }
-
+struct LableText:View{
+    var text : String
+    var body: some View{
+        Text(text)
+            .bold()
+            .kerning(1.2)
+//            .opacity(0.7)
+            .foregroundColor(Color("TargetColor"))
+            .font(.caption)
+    }
+}
 struct BigTargetText: View {
     var text: String
     var body: some View {
@@ -41,6 +52,7 @@ struct TextView_Previews: PreviewProvider {
         InstructionText(text: "Instruction")
         BigTargetText(text: "Target")
         SliderLableText(text: "0")
+        LableText(text: "some 456")
         }
     }
 }

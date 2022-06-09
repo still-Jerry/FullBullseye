@@ -12,27 +12,52 @@ struct BackgroundView: View {
     var body: some View {
     VStack{
         TopView(game:$game)
+        Spacer()
         ButtomView(game:$game)
         }
+    .padding()
+    .background(Color("BackgroundColor"))
+    .edgesIgnoringSafeArea(.all)
     }
 }
 struct TopView: View{
     @Binding  var game:Game
 
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack{
+        RoundedImageStrokedView(systemName: "arrow.counterclockwise")
+        Spacer()
+        RoundedImageFilledView(systemName: "list.dash")
+        }
     }
 }
-
+struct NumberView: View{
+    var title: String
+    var text: String
+    var body: some View {
+        VStack{
+            LableText(text:title.uppercased())
+            RoundedRectedTextView(text:text)
+        }
+    }
+}
 struct ButtomView: View{
     @Binding  var game:Game
 
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack{
+        NumberView(title: "Score", text: String(game.score))
+        Spacer()
+        NumberView(title: "Round", text: String(game.rounds))
+        }
     }
 }
 struct BackgroundView_Previews: PreviewProvider {
     static var previews: some View {
-        BackgroundView(game:.constant(Game()))
+        Group {
+            BackgroundView(game:.constant(Game()))
+            
+        }
+        
     }
 }
