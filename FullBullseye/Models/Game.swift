@@ -14,4 +14,9 @@ struct Game{
         
         return 100-abs(sliderValues-target)
     }
+    mutating func restart(){
+        score=0
+        target = Int.random(in: 1..<100)
+        rounds=1
+    }
 }
