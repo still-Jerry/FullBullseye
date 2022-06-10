@@ -46,6 +46,19 @@ struct BigTargetText: View {
             .foregroundColor(Color("TargetColor"))
             .bold()   }
 }
+struct ButtonText: View{
+    var text: String
+    var body: some View{
+        Text(text)
+            .foregroundColor(Color("ButtonFillTextColor"))
+            .bold()
+            .padding(10)
+            .frame(maxWidth:.infinity)
+            .background(Color.accentColor)
+            .cornerRadius(12.0)
+            
+    }
+}
 struct TextView_Previews: PreviewProvider {
     static var previews: some View {
         VStack{
@@ -53,6 +66,7 @@ struct TextView_Previews: PreviewProvider {
         BigTargetText(text: "Target")
         SliderLableText(text: "0")
         LableText(text: "some 456")
+            ButtonText(text: "nextRound")
         }
     }
 }

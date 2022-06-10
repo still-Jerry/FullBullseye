@@ -17,6 +17,7 @@
 		277A83BE284F7AD700E1C2CF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 277A83BD284F7AD700E1C2CF /* Preview Assets.xcassets */; };
 		277A83E2284FA42900E1C2CF /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277A83E1284FA42800E1C2CF /* Game.swift */; };
 		277A83EA284FAD4900E1C2CF /* FullBullseyeTests12.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277A83E9284FAD4900E1C2CF /* FullBullseyeTests12.swift */; };
+		278F5B8F28532ED800879D43 /* PointsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278F5B8E28532ED800879D43 /* PointsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		277A83E1284FA42800E1C2CF /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		277A83E7284FAD4800E1C2CF /* FullBullseyeTests12.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FullBullseyeTests12.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		277A83E9284FAD4900E1C2CF /* FullBullseyeTests12.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullBullseyeTests12.swift; sourceTree = "<group>"; };
+		278F5B8E28532ED800879D43 /* PointsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 				275E32D52850AE9B00FC60DE /* RoundView.swift */,
 				275E32D128508E5000FC60DE /* TextView.swift */,
 				275E32D32850A7AD00FC60DE /* ShapesView.swift */,
+				278F5B8E28532ED800879D43 /* PointsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 				277A83B9284F7AD300E1C2CF /* ContentView.swift in Sources */,
 				275E32D62850AE9B00FC60DE /* RoundView.swift in Sources */,
 				275E32D228508E5000FC60DE /* TextView.swift in Sources */,
+				278F5B8F28532ED800879D43 /* PointsView.swift in Sources */,
 				277476942851D96C00D6D576 /* BackgroundView.swift in Sources */,
 				277A83E2284FA42900E1C2CF /* Game.swift in Sources */,
 				275E32D42850A7AD00FC60DE /* ShapesView.swift in Sources */,

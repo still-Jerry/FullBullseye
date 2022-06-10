@@ -29,8 +29,9 @@ struct InstractionsView:View{
         VStack{
     InstructionText(text:"🎭🎭🎭\nHello, world!")
         BigTargetText(text:"\(game.target)")
-        .padding(.top, 15.0)
+        .padding(.top, 40.0)
         }
+        .padding(.bottom, 20.0 )
     }
 }
 
@@ -43,7 +44,7 @@ struct SliderText:View{
             
             SliderLableText(text: "100")
         }
-            .padding(.vertical,10)
+            .padding(.vertical,5)
     }
 }
 struct HiteMeButtonView: View{
