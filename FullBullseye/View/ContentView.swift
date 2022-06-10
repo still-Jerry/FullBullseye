@@ -39,9 +39,9 @@ struct SliderText:View{
     var body: some View{
         HStack{
             SliderLableText(text: "1")
-            Slider(value: $sliderValue,  in: 1.0 ... 200.0)
+            Slider(value: $sliderValue,  in: 1.0 ... 100.0)
             
-            SliderLableText(text: "200")
+            SliderLableText(text: "100")
         }
             .padding(.vertical,10)
     }
@@ -53,6 +53,8 @@ struct HiteMeButtonView: View{
     var body: some View{
         Button(action: {
                 alertIdsVisible=true
+            
+
         }) {
             Text("Hit me".uppercased())
                 .bold()
@@ -68,7 +70,10 @@ struct HiteMeButtonView: View{
         )
         .alert(isPresented: $alertIdsVisible,
                content: {
-            return Alert(title: Text("TITILE"), message: Text("The slider value is \(sliderValue)" + "\n you score is \(game.points(sliderValues: Int(sliderValue)))"), dismissButton: Alert.Button.cancel(Text("GOUOT")))
+            let points = game.points(sliderValues: Int(sliderValue))
+            return Alert(title: Text("TITILE"), message: Text("The slider value is \(sliderValue)" + "\n you score is \(points)"), dismissButton: Alert.Button.cancel(Text("GOUOT")){
+                game.start(points:points)
+            })
         })
        
         .cornerRadius(21.0)

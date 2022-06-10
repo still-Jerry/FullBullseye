@@ -12,6 +12,7 @@ struct RoundedImageStrokedView: View {
     var body: some View {
         Image(systemName:systemName)
             .frame(width: 55.0, height: 55.0)
+            .foregroundColor(Color("ButtonFillBackgroudColor"))
 //            .foregroundColor(Color("TargetColor"))
             .overlay  (
                 Circle()
@@ -37,6 +38,7 @@ struct RoundedRectedTextView: View {
             .bold()
             .font(.title3)
             .frame(width: 75.0, height: 55.0)
+        
 //            .foregroundColor(Color("TargetColor"))
             .overlay  (
                 RoundedRectangle(cornerRadius: 21.0)
