@@ -19,7 +19,9 @@ struct PointsView: View {
             AlertText(text: "your scored \(points) Points\n⚜️⚜️⚜️")
                 .foregroundColor(Color.black)
             Button(action: {
+                withAnimation{
                 alertIdsVisible = false
+                }
                 game.start(points: points)
             }){
                 ButtonText(text:"Start again")
@@ -31,7 +33,7 @@ struct PointsView: View {
             .background(Color("BackgroundColor"))
             .cornerRadius(21.0)
             .shadow( radius: 10, x: 0, y: 0)
-        
+            .transition(.scale)
     }
 }
 

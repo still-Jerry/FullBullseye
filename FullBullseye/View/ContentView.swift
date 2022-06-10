@@ -18,9 +18,11 @@ struct ContentView: View {
             InstractionsView(game:$game).padding(.top, alertIdsVisible ? 0 : 5.0 )
             if alertIdsVisible{
                 PointsView(alertIdsVisible: $alertIdsVisible, sliderValue: $sliderValue, game: $game)
+                    .transition(.scale)
             }else{
             SliderText(sliderValue:$sliderValue)
             HiteMeButtonView(alertIdsVisible: $alertIdsVisible, sliderValue: $sliderValue, game: $game)
+                    .transition(.scale)
             }
         }
         .padding()
@@ -57,8 +59,9 @@ struct HiteMeButtonView: View{
     @Binding  var game:Game
     var body: some View{
         Button(action: {
+            withAnimation{
                 alertIdsVisible=true
-            
+            }
 
         }) {
             Text("Hit me".uppercased())
