@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State private  var alertIdsVisible=false
-    @State private var sliderValue = 70.0
+    @State private var sliderValue = 50.0
     @State private var game=Game()
     var body: some View {
         ZStack{
@@ -31,7 +31,7 @@ struct InstractionsView:View{
         BigTargetText(text:"\(game.target)")
         .padding(.top, 40.0)
         }
-        .padding(.bottom, 20.0 )
+        .padding(.bottom, 5.0 )
     }
 }
 
@@ -87,8 +87,9 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
             .preferredColorScheme(.dark)
-        ContentView()
-            .preferredColorScheme(.light)
+//        ContentView()
+//            .preferredColorScheme(.light)
+        ContentView().previewLayout(.fixed(width: 568, height: 320))
     }
 }
 
