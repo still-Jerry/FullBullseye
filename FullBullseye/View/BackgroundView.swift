@@ -54,10 +54,10 @@ struct RingsView: View{
                 .edgesIgnoringSafeArea(.all)
             ForEach(1..<5){ring in
                 let size = CGFloat(ring*100)
-                let opacity = colorScheme == . dark ? 0.1 : 0.3
+                let opacity = colorScheme == . dark ? 0.2 : 0.3
             Circle()
                 .stroke(lineWidth: 20.0)
-                .fill(RadialGradient(gradient: Gradient(colors: [Color("RingsColor").opacity(opacity), Color("RingsColor").opacity(0)]), center: .center, startRadius: 100, endRadius: 300))
+                .fill(RadialGradient(gradient: Gradient(colors: [Color("RingsColor").opacity(opacity * 0.8), Color("RingsColor").opacity(0)]), center: .center, startRadius: 100, endRadius: 300))
                 .frame(width: size, height: size)
             }
         }
@@ -78,6 +78,7 @@ struct BackgroundView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             BackgroundView(game:.constant(Game()))
+                .preferredColorScheme(.dark)
             
         }
         

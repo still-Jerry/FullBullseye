@@ -15,9 +15,13 @@ struct ContentView: View {
         ZStack{
             BackgroundView(game:$game)
         VStack{
-            InstractionsView(game:$game)
+            InstractionsView(game:$game).padding(.top, alertIdsVisible ? 0 : 5.0 )
+            if alertIdsVisible{
+                PointsView(alertIdsVisible: $alertIdsVisible, sliderValue: $sliderValue, game: $game)
+            }else{
             SliderText(sliderValue:$sliderValue)
             HiteMeButtonView(alertIdsVisible: $alertIdsVisible, sliderValue: $sliderValue, game: $game)
+            }
         }
         .padding()
         }
@@ -29,9 +33,9 @@ struct InstractionsView:View{
         VStack{
     InstructionText(text:"🎭🎭🎭\nHello, world!")
         BigTargetText(text:"\(game.target)")
-        .padding(.top, 40.0)
+//        .padding(.top, 40.0)
         }
-        .padding(.bottom, 5.0 )
+        
     }
 }
 
@@ -69,13 +73,13 @@ struct HiteMeButtonView: View{
             LinearGradient(gradient: Gradient(colors: [Color.white.opacity(0.3), Color.clear]), startPoint: .top, endPoint: .bottom)
             }
         )
-        .alert(isPresented: $alertIdsVisible,
-               content: {
-            let points = game.points(sliderValues: Int(sliderValue))
-            return Alert(title: Text("TITILE"), message: Text("The slider value is \(sliderValue)" + "\n you score is \(points)"), dismissButton: Alert.Button.cancel(Text("GOUOT")){
-                game.start(points:points)
-            })
-        })
+//        .alert(isPresented: $alertIdsVisible,
+//               content: {
+//            let points = game.points(sliderValues: Int(sliderValue))
+//            return Alert(title: Text("TITILE"), message: Text("The slider value is \(sliderValue)" + "\n you score is \(points)"), dismissButton: Alert.Button.cancel(Text("GOUOT")){
+//                game.start(points:points)
+//            })
+//        })
        
         .cornerRadius(21.0)
         .overlay(

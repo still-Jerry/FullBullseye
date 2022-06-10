@@ -8,11 +8,20 @@
 import SwiftUI
 
 struct PointsView: View {
+    @Binding   var alertIdsVisible: Bool
+    @Binding  var sliderValue: Double
+    @Binding  var game:Game
     var body: some View {
+        let points = game.points(sliderValues: Int(sliderValue))
         VStack(spacing: 10){
-            InstructionText(text: "The sliders value is")
-            BigTargetText(text: "14n")
-            Button(action: {}){
+            AlertText(text: "The slider's value is")
+            BigTargetText(text: String(Int(sliderValue.rounded())))
+            AlertText(text: "your scored \(points) Points\n⚜️⚜️⚜️")
+                .foregroundColor(Color.black)
+            Button(action: {
+                alertIdsVisible = false
+                game.start(points: points)
+            }){
                 ButtonText(text:"Start again")
             }
            
@@ -27,8 +36,11 @@ struct PointsView: View {
 }
 
 struct PointsView_Previews: PreviewProvider {
+    static private var alertIdsVisible = Binding.constant(false)
+    static private var sliderValue = Binding.constant(50.0)
+    static private var game = Binding.constant(Game())
     static var previews: some View {
-        PointsView()
-        PointsView().previewLayout(.fixed(width: 568, height: 320))
+        PointsView(alertIdsVisible: alertIdsVisible, sliderValue: sliderValue, game: game)
+        PointsView(alertIdsVisible: alertIdsVisible, sliderValue: sliderValue, game: game).previewLayout(.fixed(width: 568, height: 320))
     }
 }
