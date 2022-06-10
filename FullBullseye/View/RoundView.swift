@@ -20,6 +20,18 @@ struct RoundedImageStrokedView: View {
             )
     }
 }
+struct RoundedText : View {
+    var text : String
+    var body : some View{
+        Text(text)
+            .frame(width: 55.0, height: 55.0)
+            .foregroundColor(Color("ButtonFillBackgroudColor"))
+            .overlay  (
+                Circle()
+                    .strokeBorder(Color("ButtonSrokeColor"),lineWidth: 2.0)
+            )
+    }
+}
 struct RoundedImageFilledView: View {
     var systemName: String
     var body: some View {
@@ -55,6 +67,7 @@ struct RoundedIView: View {
             RoundedImageFilledView(systemName: "arrow.counterclockwise")
             RoundedImageFilledView(systemName: "list.dash")
             RoundedRectedTextView(text: "035")
+            RoundedText(text: "5")
            
         }
     }

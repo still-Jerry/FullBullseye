@@ -59,10 +59,29 @@ struct ButtonText: View{
             
     }
 }
+
 struct AlertText: View{
     var text: String
     var body: some View{
         Text(text)
+            .foregroundColor(Color("ButtonFillBackgroudColor"))
+//            .bold()
+            .opacity(0.8)
+//            .font(.title)
+            .multilineTextAlignment(.center)
+            
+//            .padding(10)
+//            .frame(maxWidth:.infinity)
+//            .background(Color.accentColor)
+//            .cornerRadius(12.0)
+            
+    }
+}
+struct DateText: View{
+    var date: Date
+    var body: some View{
+        Text(date, style: .time
+    )
             .foregroundColor(Color("ButtonFillBackgroudColor"))
 //            .bold()
             .opacity(0.8)
