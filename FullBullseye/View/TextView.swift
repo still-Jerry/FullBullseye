@@ -44,8 +44,22 @@ struct BigTargetText: View {
             .fontWeight(.black)
             .kerning(-2.0)
             .foregroundColor(Color("TargetColor"))
-            .bold()   }
+            .bold()
+            .multilineTextAlignment(.center)
+    }
 }
+//struct BigBoldText: View {
+//    var text: String
+//    var body: some View {
+//        Text(text.uppercased())
+//            .font(.title)
+//            .fontWeight(.black)
+//            .kerning(2.0)
+//            .foregroundColor(Color("TargetColor"))
+////            .bold()
+////            .multilineTextAlignment(.center)
+//    }
+//}
 struct ButtonText: View{
     var text: String
     var body: some View{
@@ -102,8 +116,9 @@ struct TextView_Previews: PreviewProvider {
         BigTargetText(text: "Target")
         SliderLableText(text: "0")
         LableText(text: "some 456")
-            AlertText(text: "Your alert text")
-            ButtonText(text: "nextRound")
+        AlertText(text: "Your alert text")
+        ButtonText(text: "nextRound")
+//        BigBoldText(text: "Leaderboard")
         }
     }
 }

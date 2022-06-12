@@ -12,7 +12,7 @@ struct PointsView: View {
     @Binding  var sliderValue: Double
     @Binding  var game:Game
     var body: some View {
-        let points = game.points(sliderValues: Int(sliderValue))
+        let points = game.points(sliderValues: Int(sliderValue.rounded()))
         VStack(spacing: 10){
             AlertText(text: "The slider's value is")
             BigTargetText(text: String(Int(sliderValue.rounded())))

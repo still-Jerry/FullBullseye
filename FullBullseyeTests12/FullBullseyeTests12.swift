@@ -35,6 +35,15 @@ class FullBullseyeTests12: XCTestCase {
         let score = game.points(sliderValues: guess)
         XCTAssertEqual(score, 95)
     }
+    func testLEaderboard(){
+        game.start(points: 100)
+        XCTAssertEqual(game.leaderboardEntries.count, 1)
+        XCTAssertEqual(game.leaderboardEntries[0].score, 100)
+        game.start(points: 200)
+        XCTAssertEqual(game.leaderboardEntries.count, 2)
+        XCTAssertEqual(game.leaderboardEntries[0].score, 200)
+
+    }
 //    func testPerformanceExample() throws {
 //        // This is an example of a performance test case.
 //        measure {
