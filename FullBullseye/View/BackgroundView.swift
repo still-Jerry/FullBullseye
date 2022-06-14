@@ -4,7 +4,7 @@
 //
 //  Created by Anatolich Mixaill on 09.06.2022.
 //
-
+//добавлю один коммент для проверки
 import SwiftUI
 
 struct BackgroundView: View {
